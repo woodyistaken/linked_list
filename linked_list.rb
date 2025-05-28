@@ -45,6 +45,8 @@ class LinkedList
   end
 
   def pop
+    return nil if @head.nil?
+
     curr_node = head
     curr_node = curr_node.next until curr_node.next.next.nil?
     popped = curr_node.next
@@ -54,6 +56,7 @@ class LinkedList
   end
 
   def contains?(value)
+    curr_node = head
     until curr_node.nil?
       return true if curr_node.data == value
 
